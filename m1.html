@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>getElementById is a method, while innerHTML is a property.</h1>
+        <p id="demo"></p>
+        <p id="id1"></p>
+        <p id="screen1"></p>
+        <input type="button" value="back" onclick="goBack()">
+        <input type="button" value="alert" onclick="myAlert()">
+        <button onclick="myPrompt()">Prompt</button> 
+        <h2>JavaScript HTML Events</h2>
+        <h2 onclick="this.innerHTML='oops!'">Click on this text!</h2>
+        <button onclick="displayDate()">the time is?</button>
+        <button onclick="myTimeOut()"> Click</button>
+        <script>
+            document.getElementById("demo").innerHTML="Dineshkumar E";
+            document.getElementById("demo").style.color="red";
+            function displayDate(){
+                document.getElementById("demo1").innerHTML=Date();
+            }
+            document.getElementById("id1").innerHTML="Browser inner window width:"+window.innerWidth+"px<br>"+
+            "Browser inner window height"+window.innerHeight+"px";
+            document.getElementById("screen1").innerHTML="Browser inner screen width:"+screen.width+"px<br>"+
+            "Browser inner screen height"+screen.height+"px";
+            function goBack(){
+                window.history.back()
+            }
+            function myAlert(){
+                alert("i am an alert box!");
+            }
+            function myPrompt(){
+                let text;
+                let person=prompt("please enter your name:");
+                if(person==""){
+                    text="user cancelled the prompt";
+                }
+                else{
+                    text=" Hello "+person+"!how are you today!";
+                }
+                alert(text);
+            }
+            let timeOut;
+            function myTimeOut(){
+                setTimeout(function(){
+                    alert("i am dinesh");
+                },2000)
+            }
+        </script>
+        <p id="demo1"></p>
+    </body>
+
+</html>
